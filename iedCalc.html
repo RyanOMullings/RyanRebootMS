@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <title>Welcome to RyanRebootMS </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <!-- Header -->
+          <header id="header">
+            <a href="index.html" class="logo"><strong>The one stop shop for everything Reboot.</strong> by Ryan M</a>
+            <ul class="icons">
+              <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>Maplestory IED Calculator</h1>
+            </header>
+
+            <span class="image main"><img src="images/boss.jpg" alt="" /></span>
+            <form>
+              <fieldset>
+                <legend style="text-align:center;">
+                  Maplestory IED Calculator
+                </legend>
+                <table id="iedInfo">
+                  <tr>
+                    <td>Current IED In character window: </td>
+                    <td>
+                      <input type="number" name="IED" id="charIED" min="0" max="99">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Amount of IED you are adding: </td>
+                    <td>
+                      <input type="number" name="add" id="addIED" min="0" max="99"> </td>
+                  </tr>
+                  <tr>
+                    <td>Total amount of IED after:</td>
+                    <td id="totalIED"></td>
+                  </tr>
+                </table>
+                <div style="text-align:center;">
+    				<input type="button" value="Calculate total" onclick="init();">
+				</div>
+                
+                <div style="text-align:center;">
+    				<p>Keep in mind that some sources of IED are not shown in your character window(nebs,5th job core,hyper skills). 
+    				<br>Ex.Say you have 70%IED in your character window but a 15% IED Neb. You actually have 75% IED but your character window will say 70.</p>
+				</div>
+
+                <table id="Boss">
+                  <tr>
+                    <th align="center">Boss Name</th>
+                    <th align="center">Boss PDR</th>
+                    <th align="center">Suggested IED</th>
+                  </tr>
+                  <tr>
+                    <td>Chaos Vonbon</td>
+                    <td>100% </td>
+                    <td>80%+</td>
+                  </tr>
+                  <tr>
+                    <td>Chaos Queen</td>
+                    <td>
+                      120%
+                    </td>
+                    <td>85%+</td>
+                  </tr>
+                  <tr>
+                    <td>Chaos Pierre</td>
+                    <td>
+                      80%
+                    </td>
+                    <td>75%+</td>
+                  </tr>
+                  <tr>
+                    <td>Chaos Vellum</td>
+                    <td>
+                      300%
+                    </td>
+                    <td>93%+</td>
+                  </tr>
+                  <tr>
+                    <td>Hell Gollux</td>
+                    <td>
+                      80%
+                    </td>
+                    <td>75%+</td>
+                  </tr>
+                  <tr>
+                    <td>Hard Hilla</td>
+                    <td>
+                      100%
+                    </td>
+                    <td>80%+</td>
+                  </tr>
+                  <tr>
+                    <td>Cygnus</td>
+                    <td>
+                      100%
+                    </td>
+                    <td>80%+</td>
+                  </tr>
+                  <tr>
+                    <td>Hard Magnus</td>
+                    <td>
+                      120%
+                    </td>
+                    <td>85%+</td>
+                </table>
+              </fieldset>
+            </form>
+
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+
+          <!-- Search -->
+          <section id="search" class="alt">
+            <form method="post" action="#">
+              <input type="text" name="query" id="query" placeholder="Search" />
+            </form>
+          </section>
+
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">Homepage</a></li>
+              <li><a href="#">Reboot Progression Guide</a></li>
+              <li><a href="day.html">Dailies Checklist</a></li>
+              <li>
+                <span class="opener">Calculators</span>
+                <ul>
+                  <li><a href="iedCalc.html">PDR/IED(Ignore Enemy Defense) Calculator </a></li>
+                  <li><a href="statusCalc.html">Status Resist Calculator</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Training Guide</a></li>
+              <li>
+                <span class="opener">Class Specific Guides</span>
+                <ul>
+                  <span class="opener">Warriors</span>
+                  <span class="opener">Pirates</span>
+                  <span class="opener">Bowman</span>
+                  <span class="opener">Theives</span>
+                  <span class="opener">Mages</span>
+                </ul>
+              </li>
+
+            </ul>
+          </nav>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>How you can support me</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a href="https://streampro.io/tip/ryanrebootms" target=_blank" class="image"><img src="images/Paypal.jpg" alt="" /></a>
+                <p>All the resources on this site are 100% free but if you would like to support me I accept Paypal donations.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>Join The Community!</h2>
+            </header>
+            <p>Never play the game alone again. Join the RebootMS discord and chat with me and hundereds of other players. Also, don't forget to subscribe to the youtube channel for quality content to keep you entertained on a daily basis. Lastly, follow
+              me on twitch to know exactly when I stream so you don't miss the skeem!</p>
+            <ul class="contact">
+              <li class="fa-twitch"><a href="https://www.twitch.tv/ryanrebootms" target=_blank>Twitch Channel</a></li>
+              <li class="fa-youtube"><a href="https://www.youtube.com/channel/UCf49W9nQ2z5Gl73y703b_mA" target=_blank> Youtube Channel</a> </li>
+              <li class="fa-desktop"><a href="https://discord.gg/0jgAggG32Y0Iib95" target=_blank> Discord Server</a> </li>
+            </ul>
+          </section>
+
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; RyanRebootMS. All rights reserved.</p>
+          </footer>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      function init() {
+        var charIED = document.getElementById("charIED");
+        var charAddIED = document.getElementById("addIED");
+        calculate();
+      }
+
+      function calculate() {
+        var y = parseInt(document.getElementById("charIED").value);
+        var z = parseInt(document.getElementById("addIED").value);
+        var x = Math.round(((100 - y) * (z / 100)) + y);
+        document.getElementById("totalIED").innerHTML = x + "%";
+      }
+
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+</html>

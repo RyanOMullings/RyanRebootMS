@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <title>Welcome to RyanRebootMS </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <!-- Header -->
+          <header id="header">
+            <a href="index.html" class="logo"><strong>The one stop shop for everything Reboot.</strong> by Ryan M</a>
+            <ul class="icons">
+              <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>Hyperstat Simulator</h1>
+            </header>
+            <form>
+              <fieldset>
+                <legend style="text-align:center;">
+                            <iframe width="560" height="315"src="https://www.youtube.com/embed/B8TkzJBDNxg?autoplay=1" frameborder="0" allowfullscreen ></iframe>
+                  <br> This code and simulator was inspired by MegaScience. <br> <a href="https://jsfiddle.net/MegaScience/2aozwz1g/">Source Code by MegaScience</a> <br> <a href="https://jsfiddle.net/user/MegaScience/fiddles/">MegaScience's public jsfiddle</a><br>
+                </legend>
+               <table id="levelInfo">
+      <tr>
+        <td>Level: </td>
+        <td>
+          <select id="inputLevel" onchange="calcHyperStatPoints()"></select>
+        </td>
+      </tr>
+      <tr>
+        <td>Total Points: </td>
+        <td id="hyperPoints"></td>
+      </tr>
+      <tr>
+        <td>Current Points: </td>
+        <td id="currentPoints"></td>
+      </tr>
+    </table>
+    <table id="stats">
+      <tr>
+        <th>Stat</th>
+        <th>Level</th>
+        <th>Stat Amount</th>
+      </tr>
+      <tr>
+        <td>STR</td>
+        <td>
+          <select data-max-level="10" data-id="str" data-type="0" data-value="15" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="str"></td>
+      </tr>
+      <tr>
+        <td>DEX</td>
+        <td>
+          <select data-max-level="10" data-id="dex" data-type="0" data-value="15" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="dex"></td>
+      </tr>
+      <tr>
+        <td>INT</td>
+        <td>
+          <select data-max-level="10" data-id="int" data-type="0" data-value="15" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="int"></td>
+      </tr>
+      <tr>
+        <td>LUK</td>
+        <td>
+          <select data-max-level="10" data-id="luk" data-type="0" data-value="15" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="luk"></td>
+      </tr>
+      <tr>
+        <td>HP</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="hp" data-type="0" data-value="2" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="hp"></td>
+      </tr>
+      <tr>
+        <td>MP</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="mp" data-type="0" data-value="2" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="mp"></td>
+      </tr>
+      <tr>
+        <td>Demon Force</td>
+        <td>
+          <select data-max-level="5" data-id="demFor" data-type="0" data-value="10" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="demFor"></td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>
+          <select data-max-level="5" data-id="speed" data-type="0" data-value="4" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="speed"></td>
+      </tr>
+      <tr>
+        <td>Jump</td>
+        <td>
+          <select data-max-level="5" data-id="jump" data-type="0" data-value="2" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="jump"></td>
+      </tr>
+      <tr>
+        <td>Critical Rate</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="critRate" data-type="1" data-value="0" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="critRate"></td>
+      </tr>
+      <tr>
+        <td>Minimal Critical</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="minCrit" data-type="0" data-value="1" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="minCrit"></td>
+      </tr>
+      <tr>
+        <td>Maximum Critical</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="maxCrit" data-type="1" data-value="0" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="maxCrit"></td>
+      </tr>
+      <tr>
+        <td>Ignore Defense</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="ignDef" data-type="0" data-value="3" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="ignDef"></td>
+      </tr>
+      <tr>
+        <td>Damage</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="damage" data-type="0" data-value="3" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="damage"></td>
+      </tr>
+      <tr>
+        <td>Boss Damage</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="bDamage" data-type="1" data-value="2" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="bDamage"></td>
+      </tr>
+      <tr>
+        <td>Elemental Resistance</td>
+        <td>
+          <select data-max-level="5" data-percent data-id="eleResist" data-type="0" data-value="4" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="eleResist"></td>
+      </tr>
+      <tr>
+        <td>Status Resistance</td>
+        <td>
+          <select data-max-level="10" data-percent data-id="statResist" data-type="1" data-value="0" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="statResist"></td>
+      </tr>
+      <tr>
+        <td>Stance</td>
+        <td>
+          <select data-max-level="5" data-percent data-id="stance" data-type="0" data-value="2" onchange="updatePoints(this)"></select>
+        </td>
+        <td id="stance"></td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+
+          <!-- Search -->
+          <section id="search" class="alt">
+            <form method="post" action="#">
+              <input type="text" name="query" id="query" placeholder="Search" />
+            </form>
+          </section>
+
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">Homepage</a></li>
+              <li><a href="#">Reboot Progression Guide</a></li>
+              <li><a href="day.html">Dailies Checklist</a></li>
+              <li>
+                <span class="opener">Calculators</span>
+                <ul>
+                  <li><a href="iedCalc.html">PDR/IED(Ignore Enemy Defense) Calculator </a></li>
+                  <li><a href="statusCalc.html">Status Resist Calculator</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Training Guide</a></li>
+              <li>
+                <span class="opener">Class Specific Guides</span>
+                <ul>
+                  <span class="opener">Warriors</span>
+                  <span class="opener">Pirates</span>
+                  <span class="opener">Bowman</span>
+                  <span class="opener">Theives</span>
+                  <span class="opener">Mages</span>
+                </ul>
+              </li>
+
+            </ul>
+          </nav>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>How you can support me</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a href="https://streampro.io/tip/ryanrebootms" target=_blank" class="image"><img src="images/Paypal.jpg" alt="" /></a>
+                <p>All the resources on this site are 100% free but if you would like to support me I accept Paypal donations.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>Join The Community!</h2>
+            </header>
+            <p>Never play the game alone again. Join the RebootMS discord and chat with me and hundereds of other players. Also, don't forget to subscribe to the youtube channel for quality content to keep you entertained on a daily basis. Lastly, follow
+              me on twitch to know exactly when I stream so you don't miss the skeem!</p>
+            <ul class="contact">
+              <li class="fa-twitch"><a href="https://www.twitch.tv/ryanrebootms" target=_blank>Twitch Channel</a></li>
+              <li class="fa-youtube"><a href="https://www.youtube.com/channel/UCf49W9nQ2z5Gl73y703b_mA" target=_blank> Youtube Channel</a> </li>
+              <li class="fa-desktop"><a href="https://discord.gg/0jgAggG32Y0Iib95" target=_blank> Discord Server</a> </li>
+            </ul>
+          </section>
+
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; RyanRebootMS. All rights reserved.</p>
+          </footer>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+var information = {
+  currentLevel: 0,
+  currentPoints: 0,
+  currentUsed: 0,
+  remainder: 0,
+  currentStatLevels: {
+    str: 0,
+    dex: 0,
+    int: 0,
+    luk: 0,
+    hp: 0,
+    mp: 0,
+    demFor: 0,
+    speed: 0,
+    jump: 0,
+    critRate: 0,
+    minCrit: 0,
+    maxCrit: 0,
+    ignDef: 0,
+    damage: 0,
+    bDamage: 0,
+    eleResist: 0,
+    statResist: 0,
+    stance: 0
+  },
+  levelAmounts: [0, 1, 2, 4, 8, 10, 15, 20, 25, 30, 35],
+  levelTotals: [0, 1, 3, 7, 15, 25, 40, 60, 85, 115, 150],
+  //specialIncr: [0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 3],
+  specialIncr: [0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2]
+};
+
+function init() {
+  var levelSelection = document.getElementById("inputLevel");
+  var stats = document.getElementById("stats").getElementsByTagName("select");
+  var optionElement;
+  for (var countLevel = 140; countLevel < 251; countLevel++) {
+    optionElement = document.createElement("option");
+    optionElement.value = optionElement.text = countLevel;
+    levelSelection.add(optionElement);
+  }
+  for (var eleCounter = 0; eleCounter < stats.length; eleCounter++) {
+    var maxOptions = (stats[eleCounter].dataset.maxLevel == "5" ? 6 : 11);
+    for (var statLevel = 0; statLevel < maxOptions; statLevel++) {
+      optionElement = document.createElement("option");
+      optionElement.value = optionElement.text = statLevel;
+      stats[eleCounter].add(optionElement);
+    }
+    calculateStat(stats[eleCounter]);
+  }
+  calcHyperStatPoints();
+}
+
+function calcHyperStatPoints() {
+  var inputLevel = document.getElementById("inputLevel").value;
+  var checkLevel = 140;
+  var increment = 3;
+  for (var currentPoints = 0; checkLevel <= inputLevel; currentPoints += increment, checkLevel++) {
+    if (checkLevel % 10 === 0 && checkLevel > 140) increment++;
+  }
+  if (information.currentLevel > inputLevel && information.currentUsed > currentPoints) resetStats();
+  information.currentLevel = inputLevel;
+  document.getElementById("hyperPoints").innerHTML = information.currentPoints = currentPoints;
+  updateRemainder();
+}
+
+// If the level is lowered to the point the 
+// current used points are more than what
+// you'd have, all are reset. It'd be VERY
+// awkward to try coding it to find
+// specific stats to lower.
+function resetStats() {
+  var selects = document.getElementById("stats").getElementsByTagName("select");
+  for (var counter = 0; counter < selects.length; counter++) {
+    options = selects[counter].value = 0;
+    updatePoints(selects[counter], true);
+  }
+}
+
+function updatePoints(element, noupdate) {
+  information.currentStatLevels[element.dataset.id] = information.levelTotals[element.value];
+  calculateStat(element);
+  if (noupdate) return;
+  updateRemainder();
+}
+
+function updateRemainder() {
+  information.currentUsed = 0;
+  for (var statKey in information.currentStatLevels) {
+    if (information.currentStatLevels.hasOwnProperty(statKey)) {
+      information.currentUsed += information.currentStatLevels[statKey];
+    }
+  }
+  // EMCAScript 5 code which won't work on IE7 and such, so using the old method above instead.
+  /*Object.keys(information.currentStatLevels).forEach(function (key) {
+    information.currentUsed += information.currentStatLevels[key];
+  });*/
+  document.getElementById("currentPoints").innerHTML = information.remainder = (information.currentPoints - information.currentUsed);
+  availableOptions();
+}
+
+function availableOptions() {
+  var selects = document.getElementById("stats").getElementsByTagName("select");
+  var options, currValue, toValue;
+  for (var primCount = 0; primCount < selects.length; primCount++) {
+    options = selects[primCount].options;
+    currValue = information.levelTotals[selects[primCount].value];
+    for (var secCount = 0; secCount < options.length; secCount++) {
+      toValue = (information.levelTotals[options[secCount].value] - currValue);
+      options[secCount].disabled = (information.remainder - toValue < 0);
+    }
+  }
+}
+
+function calculateStat(element) {
+  var result = 0,
+    increment = 0,
+    currentLevel = 0;
+  switch (element.dataset.type) {
+  case "0":
+    result = element.value * element.dataset.value;
+    break;
+  case "1":
+    increment += parseInt(element.dataset.value);
+    for (result = 0; currentLevel < element.value; result += increment, currentLevel++) {
+      if (currentLevel % 5 === 0 || currentLevel === 0) increment++;
+      //console.log(element.dataset.id + " " + increment + " " + result);
+    }
+    // Old, hard calculation based on a less obvious increment value./*
+    /*increment = parseInt(element.dataset.value), result = 0;
+    for (var loop = 1; loop <= element.value; loop++) {
+      //console.log("Loop: " + loop + " Increment: " + increment + " Result: " + result);
+      result += information.specialIncr[loop] + increment;
+    }*/
+    //result = (element.value > 0 ? information.specialIncr[element.value] + parseInt(element.dataset.value) : 0);
+    //console.log(element.dataset.id + " " + result);
+    break;
+  default:
+    console.log("Error: Invalid Type ID: " + element.dataset.type);
+  }
+  document.getElementById(element.dataset.id).innerHTML = result + (element.dataset.percent !== undefined ? "%" : "");
+}
+
+init();
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+<style>
+form {
+  display: table;
+  margin: 0 auto;
+}
+
+#levelInfo {
+  margin: 0 auto;
+}
+
+input {
+  width: 50px;
+}
+
+select {
+  min-width: 45px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+tr:not(:last-child) td,
+th {
+  border-bottom: 1px #bfbfbf solid;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+#stats option {
+  color: green;
+}
+
+#stats option:disabled {
+  color: #bf4040;
+  background-color: #f6f3ee;
+}
+</style>
+  </body>
+
+</html>

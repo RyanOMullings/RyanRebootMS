@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <title>Welcome to RyanRebootMS </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+
+          <!-- Header -->
+          <header id="header">
+            <a href="index.html" class="logo"><strong>The one stop shop for everything Reboot.</strong> by Ryan M</a>
+            <ul class="icons">
+              <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+
+            </ul>
+          </header>
+
+          <!-- Content -->
+          <section>
+            <header class="main">
+              <h1>Daily Checklist</h1>
+            </header>
+<iframe src="https://www.forgett.com/checklist/0820846910" style="border:2px #ffffff solid;" name="myiFrame" scrolling="yes" frameborder="1" marginheight="0px" marginwidth="0px" height="800px" width="900px" allowfullscreen></iframe>
+
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div id="sidebar">
+        <div class="inner">
+
+          <!-- Search -->
+          <section id="search" class="alt">
+            <form method="post" action="#">
+              <input type="text" name="query" id="query" placeholder="Search" />
+            </form>
+          </section>
+
+          <!-- Menu -->
+          <nav id="menu">
+            <header class="major">
+              <h2>Menu</h2>
+            </header>
+            <ul>
+              <li><a href="index.html">Homepage</a></li>
+              <li><a href="#">Reboot Progression Guide</a></li>
+              <li><a href="day.html">Dailies Checklist</a></li>
+              <li>
+                <span class="opener">Calculators</span>
+                <ul>
+                  <li><a href="iedCalc.html">PDR/IED(Ignore Enemy Defense) Calculator </a></li>
+                  <li><a href="statusCalc.html">Status Resist Calculator</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Training Guide</a></li>
+              <li>
+                <span class="opener">Class Specific Guides</span>
+                <ul>
+                  <span class="opener">Warriors</span>
+                  <span class="opener">Pirates</span>
+                  <span class="opener">Bowman</span>
+                  <span class="opener">Theives</span>
+                  <span class="opener">Mages</span>
+                </ul>
+              </li>
+
+            </ul>
+          </nav>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>How you can support me</h2>
+            </header>
+            <div class="mini-posts">
+              <article>
+                <a href="https://streampro.io/tip/ryanrebootms" target=_blank class="image"><img src="images/Paypal.jpg" alt="" /></a>
+                <p>All the resources on this site are 100% free but if you would like to support me I accept Paypal donations.</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- Section -->
+          <section>
+            <header class="major">
+              <h2>Join The Community!</h2>
+            </header>
+            <p>Never play the game alone again. Join the RebootMS discord and chat with me and hundereds of other players. Also, don't forget to subscribe to the youtube channel for quality content to keep you entertained on a daily basis. Lastly, follow
+              me on twitch to know exactly when I stream so you don't miss the skeem!</p>
+            <ul class="contact">
+              <li class="fa-twitch"><a href="https://www.twitch.tv/ryanrebootms" target=_blank>Twitch Channel</a></li>
+              <li class="fa-youtube"><a href="https://www.youtube.com/channel/UCf49W9nQ2z5Gl73y703b_mA" target=_blank> Youtube Channel</a> </li>
+              <li class="fa-desktop"><a href="https://discord.gg/0jgAggG32Y0Iib95" target=_blank> Discord Server</a> </li>
+            </ul>
+          </section>
+
+          <!-- Footer -->
+          <footer id="footer">
+            <p class="copyright">&copy; RyanRebootMS. All rights reserved.</p>
+          </footer>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      function init() {
+        var charIED = document.getElementById("charIED");
+        var charAddIED = document.getElementById("addIED");
+        calculate();
+      }
+
+      function calculate() {
+        var y = parseInt(document.getElementById("charIED").value);
+        var z = parseInt(document.getElementById("addIED").value);
+        var x = Math.round(((100 - y) * (z / 100)) + y);
+        document.getElementById("totalIED").innerHTML = x + "%";
+      }
+
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+
+  </body>
+
+</html>

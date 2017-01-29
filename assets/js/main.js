@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 (function($) {
 
 	skel.breakpoints({
@@ -81,7 +82,6 @@
 								.css('background-position', $img.css('object-position') ? $img.css('object-position') : 'center');
 
 					});
-
 		// Sidebar.
 			var $sidebar = $('#sidebar'),
 				$sidebar_inner = $sidebar.children('.inner');
@@ -282,4 +282,5 @@
 
 	});
 
-})(jQuery);
+})
+(jQuery);
